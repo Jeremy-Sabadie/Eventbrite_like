@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 #gem 'pundit'
 
 gem 'rails'
+gem 'bcrypt'
 gem 'puma'
 gem 'sass-rails'
 gem 'uglifier'
@@ -12,6 +13,8 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'bootstrap-sass'
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3'
