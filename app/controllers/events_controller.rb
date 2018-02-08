@@ -22,6 +22,7 @@ class EventsController < ApplicationController
 
   def create
     @events = Event.create(events_params)
+    @events.creator = current_user.email
     if @events.save
       log_in @events
       flash[:success] = "Voici ta page"
@@ -32,16 +33,20 @@ class EventsController < ApplicationController
   end
 
   def update
-    @events = User.find(params[:id])
-    if @events.update(params.require(:events).permit(:location))
+    @events = Event.find(params[:id])
+    if @events.update(params.require(:events).permit(:location, :date, :name_event, :description))
        redirect_to @events
     else
       render 'new'
     end
   end
 
+  def date_time_now
+    @now = DateTime.now
+  end
+
   def destroy
-    @events = User.find(params[:id])
+    @events = Event.find(params[:id])
     @events.destroy
     redirect_to events_path
   end
@@ -49,7 +54,7 @@ class EventsController < ApplicationController
   private
 
   def events_params
-      params.require(:event).permit(:location, :date, :event_id)
+      params.require(:event).permit(:location, :date, :name_event, :description, :event_id)
     end
 
 end

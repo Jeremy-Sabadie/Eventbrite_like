@@ -1,3 +1,6 @@
-<h1>PROFIL</h1>
-<h2>Bienvenu su ton profil <%= @users.first_name %></h2><br>
+<h1>TON PROFIL</h1>
+<h2>Bienvenu sur ta page <%= @users.first_name %></h2><br>
 <p><%= link_to "Créer un évènement", new_event_path %></p>
+
+<p>Vos évènements:</p>
+<p><%= current_user.events.all %></p>

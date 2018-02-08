@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @users = User.create(users_params)
     if @users.save
       log_in @users
-      flash[:success] = "Voici ta page"
+      flash.now[:success] = "Voici ta page"
       redirect_to @users
     else 
       render 'new'

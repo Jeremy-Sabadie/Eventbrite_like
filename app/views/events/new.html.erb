@@ -1,6 +1,14 @@
-<h1>New Event</h1>
+<h1>Nouvel évènement</h1><br>
 
 <%= form_for @event do |f| %>
+
+  <div class="form-group">
+
+    <label>Nom de l'évènement</label>
+
+    <%= f.text_field :name_event, class: 'form-control' %>
+
+  </div>
 
   <div class="form-group">
 
@@ -20,8 +28,19 @@
 
   <div class="form-group">
 
+    <label>Description de l'évènement</label>
+
+    <%= f.text_field :description, class: 'form-control' %>
+
+  </div>
+
+  <div class="form-group">
+
     <button type="submit", class: " btn btn-lg btn-primary ">Créer</button>
 
   </div>
 
 <% end %>
+
+<button type="submit", class: " btn btn-lg btn-primary "><%= link_to "Suggérer à un ami", '#' %></button>
+

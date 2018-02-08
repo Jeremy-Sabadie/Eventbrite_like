@@ -3,21 +3,14 @@
     <%= link_to "EVENTBRITE LIKE SINCE 2018", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", '#' %></li>
+        <li><%= link_to "Accueil", root_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "Log out", logout_path, method: :delete %></li>
-          <li><%= link_to "Ton compte", users_path %></li>
-            <ul class="dropdown-menu">
-              
-                
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
+        <li><%= link_to "Déconnexion", logout_path, method: :delete %></li>
+        <li><%= link_to "Ton compte", current_user %></li>
       </ul>
+        <% else %>
+        <li><%= link_to "Connexion", login_path %></li>
+        <% end %>
     </nav>
   </div>
 </header>
