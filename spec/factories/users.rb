@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :user do
-    name "MyString"
+    first_name "MyString"
     last_name "MyString"
     email "MyString"
     password "MyString"
-    confir_password "MyString"
+    confirm_password "MyString"
   end
 end
